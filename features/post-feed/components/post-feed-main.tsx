@@ -1,4 +1,4 @@
- "use client";
+"use client";
 
 import { useState } from "react";
 import { Flex, Heading, IconButton, Stack, Text } from "@chakra-ui/react";
@@ -54,18 +54,22 @@ export function PostFeedMain({ timeline }: PostFeedMainProps) {
       flex="1"
       minW="0"
       gap="0"
-      overflow="hidden"
-      layerStyle="frosted"
-      borderRadius={{ base: "shell", md: "shellLg" }}
+      overflow={{ base: "visible", md: "hidden" }}
+      bg={{ base: "surface.canvas", md: "rgba(255,255,255,0.92)" }}
+      borderWidth={{ base: "0", md: "1px" }}
+      borderColor="border.subtle"
+      boxShadow={{ base: "none", md: "floating" }}
+      backdropFilter={{ base: "none", md: "blur(16px)" }}
+      borderRadius={{ base: "0", md: "shellLg" }}
     >
       <Flex
         align="center"
         justify="space-between"
-        px={{ base: "16px", md: "24px" }}
-        py="4"
+        px={{ base: "0", md: "24px" }}
+        py={{ base: "3", md: "4" }}
         borderBottom="1px solid"
         borderColor="border.subtle"
-        bg="rgba(255,255,255,0.85)"
+        bg={{ base: "surface.canvas", md: "rgba(255,255,255,0.85)" }}
       >
         <Stack gap="0">
           <Heading

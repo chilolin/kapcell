@@ -30,6 +30,7 @@ export function TimelinePostItem({
   onReplySubmit,
 }: TimelinePostItemProps) {
   const [isReplying, setIsReplying] = useState(false);
+  const [isRepliesVisible, setIsRepliesVisible] = useState(post.replies.length > 0);
   const [replyBody, setReplyBody] = useState("");
 
   const handleReplySubmit = () => {
@@ -41,11 +42,12 @@ export function TimelinePostItem({
     onReplySubmit(post.id, trimmedBody);
     setReplyBody("");
     setIsReplying(false);
+    setIsRepliesVisible(true);
   };
 
   return (
-    <Box px={{ base: "16px", md: "24px" }} py="6">
-      <Flex align="flex-start" gap="4">
+    <Box px={{ base: "0", md: "24px" }} py={{ base: "4", md: "6" }}>
+      <Flex align="flex-start" gap={{ base: "3", md: "4" }}>
         <Avatar.Root size="lg" colorPalette="green" variant="subtle">
           <Avatar.Fallback name={post.author} />
         </Avatar.Root>
@@ -105,20 +107,34 @@ export function TimelinePostItem({
           </HStack>
 
           <HStack justify="space-between" align="center" wrap="wrap" gap="3">
-            <Button
-              variant="ghost"
-              colorPalette="green"
-              borderRadius="full"
-              px="0"
-              fontWeight="700"
-              onClick={() => setIsReplying((current) => !current)}
-            >
-              <LuMessageCircle />
-              {isReplying ? "閉じる" : "返信する"}
-            </Button>
+            <HStack gap="4" wrap="wrap">
+              <Button
+                variant="ghost"
+                colorPalette="green"
+                borderRadius="full"
+                px="0"
+                fontWeight="700"
+                onClick={() => setIsReplying((current) => !current)}
+              >
+                <LuMessageCircle />
+                {isReplying ? "閉じる" : "返信する"}
+              </Button>
+              {post.replies.length > 0 ? (
+                <Button
+                  variant="plain"
+                  colorPalette="green"
+                  borderRadius="full"
+                  px="0"
+                  fontWeight="700"
+                  onClick={() => setIsRepliesVisible((current) => !current)}
+                >
+                  {isRepliesVisible ? "返信を隠す" : "返信を表示"}
+                </Button>
+              ) : null}
+            </HStack>
             <Text fontSize="14px" color="text.secondary">
               {post.replies.length > 0
-                ? `${post.replies.length}件の返信を表示`
+                ? `${post.replies.length}件の返信${isRepliesVisible ? "を表示中" : "は非表示"}`
                 : "まだ返信はありません"}
             </Text>
           </HStack>
@@ -126,11 +142,11 @@ export function TimelinePostItem({
           {isReplying ? (
             <Stack
               gap="3"
-              p="4"
-              bg="surface.composer"
-              borderWidth="1px"
+              p={{ base: "0", md: "4" }}
+              bg={{ base: "transparent", md: "surface.composer" }}
+              borderWidth={{ base: "0", md: "1px" }}
               borderColor="border.subtle"
-              borderRadius="card"
+              borderRadius={{ base: "0", md: "card" }}
             >
               <Textarea
                 value={replyBody}
@@ -161,8 +177,8 @@ export function TimelinePostItem({
             </Stack>
           ) : null}
 
-          {post.replies.length > 0 ? (
-            <Stack gap="4" pt="1">
+          {post.replies.length > 0 && isRepliesVisible ? (
+            <Stack gap={{ base: "3", md: "4" }} pt="1">
               {post.replies.map((reply) => (
                 <Flex key={reply.id} align="flex-start" gap="3">
                   <Avatar.Root size="sm" colorPalette="green" variant="subtle">
@@ -171,9 +187,12 @@ export function TimelinePostItem({
                   <Stack
                     gap="2"
                     flex="1"
-                    p="4"
-                    bg="surface.muted"
-                    borderRadius="card"
+                    p={{ base: "0", md: "4" }}
+                    pl={{ base: "3", md: "4" }}
+                    bg={{ base: "transparent", md: "surface.muted" }}
+                    borderRadius={{ base: "0", md: "card" }}
+                    borderLeftWidth={{ base: "2px", md: "0" }}
+                    borderColor="green.100"
                   >
                     <HStack gap="2" wrap="wrap">
                       <Text fontSize="15px" fontWeight="700" color="text.primary">
@@ -201,7 +220,9 @@ export function TimelinePostItem({
           ) : null}
         </Stack>
       </Flex>
-      {showDivider ? <Separator mt="6" borderColor="border.subtle" /> : null}
+      {showDivider ? (
+        <Separator mt={{ base: "4", md: "6" }} borderColor="border.subtle" />
+      ) : null}
     </Box>
   );
 }

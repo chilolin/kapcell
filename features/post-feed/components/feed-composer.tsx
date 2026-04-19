@@ -16,17 +16,20 @@ export function FeedComposer() {
   return (
     <Stack
       gap="4"
-      px={{ base: "16px", md: "24px" }}
-      py={{ base: "18px", md: "24px" }}
-      bg="linear-gradient(135deg, {colors.surface.composer} 0%, {colors.surface.canvas} 100%)"
+      px={{ base: "0", md: "24px" }}
+      py={{ base: "12px", md: "24px" }}
+      bg={{
+        base: "surface.canvas",
+        md: "linear-gradient(135deg, {colors.surface.composer} 0%, {colors.surface.canvas} 100%)",
+      }}
       borderBottom="1px solid"
       borderColor="border.subtle"
     >
-      <Flex align="flex-start" gap="4">
+      <Flex align="flex-start" gap={{ base: "3", md: "4" }}>
         <Avatar.Root size="lg" colorPalette="green" variant="subtle">
           <Avatar.Fallback name="Kapcell Team" />
         </Avatar.Root>
-        <Stack flex="1" gap="4">
+        <Stack flex="1" gap={{ base: "3", md: "4" }}>
           <Input
             placeholder="いまどうしてる？"
             variant="subtle"

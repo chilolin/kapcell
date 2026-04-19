@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { Box } from "@chakra-ui/react";
+import { BottomTabBar } from "@/components/bottom-tab-bar";
 import { Provider } from "@/components/ui/provider";
 
 export const metadata: Metadata = {
@@ -15,7 +17,10 @@ export default function RootLayout({
   return (
     <html lang="ja" suppressHydrationWarning>
       <body>
-        <Provider>{children}</Provider>
+        <Provider>
+          <Box pb={{ base: "84px", md: "0" }}>{children}</Box>
+          <BottomTabBar />
+        </Provider>
       </body>
     </html>
   );
