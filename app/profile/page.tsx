@@ -1,11 +1,5 @@
 import { Box, Container } from "@chakra-ui/react";
 import type { Metadata } from "next";
-import {
-  profileActivities,
-  profileShowcase,
-  profileStats,
-  profileUser,
-} from "@/features/profile";
 import { ProfileScreen } from "@/features/profile/components";
 
 export const metadata: Metadata = {
@@ -24,12 +18,7 @@ export default function ProfilePage() {
       py={{ base: "0", md: "24px" }}
     >
       <Container maxW="1120px" px={{ base: "16px", md: "24px" }}>
-        <ProfileScreen
-          user={profileUser}
-          stats={profileStats}
-          showcase={profileShowcase}
-          activities={profileActivities}
-        />
+        <ProfileScreen />
       </Container>
     </Box>
   );

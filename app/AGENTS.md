@@ -1,5 +1,6 @@
 ## Rules
 
-- `app/` は App Router の責務と components の構成を行う
-- ビジネスロジックは `features/` に配置する
-- データ取得は Server Component 側で行う
+- `app/` は route layer として使う
+- `app/` には主に `page.tsx`, `layout.tsx`, `loading.tsx`, `error.tsx`, `not-found.tsx`, `route.ts`, metadata, providers, route composition を置く
+- page は薄く保ち、feature の組み立てと route ごとの責務に集中する
+- Chakra UI の provider 配線は `app/layout.tsx` で行う

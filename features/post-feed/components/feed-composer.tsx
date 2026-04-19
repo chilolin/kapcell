@@ -1,15 +1,6 @@
 "use client";
 
-import {
-  Avatar,
-  Badge,
-  Button,
-  Flex,
-  HStack,
-  IconButton,
-  Input,
-  Stack,
-} from "@chakra-ui/react";
+import { Avatar, Badge, Button, Flex, HStack, IconButton, Input, Stack } from "@chakra-ui/react";
 import { LuImage } from "react-icons/lu";
 
 export function FeedComposer() {
@@ -48,22 +39,10 @@ export function FeedComposer() {
               >
                 <LuImage />
               </IconButton>
-              <Badge
-                colorPalette="green"
-                variant="subtle"
-                borderRadius="full"
-                px="3"
-                py="1"
-              >
+              <Badge colorPalette="green" variant="subtle" borderRadius="full" px="3" py="1">
                 画像
               </Badge>
-              <Badge
-                colorPalette="green"
-                variant="subtle"
-                borderRadius="full"
-                px="3"
-                py="1"
-              >
+              <Badge colorPalette="green" variant="subtle" borderRadius="full" px="3" py="1">
                 投票
               </Badge>
             </HStack>

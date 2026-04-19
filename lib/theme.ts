@@ -173,5 +173,5 @@ export const theme = createSystem(
         textDecoration: "none",
       },
     },
-  }),
+  })
 );

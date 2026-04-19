@@ -58,6 +58,7 @@ font-family: SFPro, Arial, "Noto Sans JP", "Noto Sans KR", sans-serif;
 ```
 
 **フォールバックの考え方**:
+
 - 欧文フォント（SFPro, Arial）を先に指定し、欧文グリフの品質を優先
 - 和文フォントは Noto Sans JP → Noto Sans KR の順
 - 韓国発のサービスのため Noto Sans KR が含まれる
@@ -65,12 +66,12 @@ font-family: SFPro, Arial, "Noto Sans JP", "Noto Sans KR", sans-serif;
 
 ### 3.4 文字サイズ・ウェイト階層
 
-| Role | Font | Size | Weight | Line Height | Letter Spacing | 備考 |
-|------|------|------|--------|-------------|----------------|------|
-| Hero (EN) | SFPro | 70px | 700 | normal | normal | 英語ヒーロー "Life on LINE" |
-| Heading 2 (JP) | Noto Sans JP | 60px | 700 | 80.04px (x1.334) | normal | "コミュニケーションアプリ" |
-| Heading 2 (JP) | Noto Sans JP | 60px | 700 | 76.2px (x1.27) | normal | "LINEのサービス一覧" |
-| Body | SFPro/Noto Sans JP | 20px | 400 | normal | normal | 本文（非常に大きい） |
+| Role           | Font               | Size | Weight | Line Height      | Letter Spacing | 備考                        |
+| -------------- | ------------------ | ---- | ------ | ---------------- | -------------- | --------------------------- |
+| Hero (EN)      | SFPro              | 70px | 700    | normal           | normal         | 英語ヒーロー "Life on LINE" |
+| Heading 2 (JP) | Noto Sans JP       | 60px | 700    | 80.04px (x1.334) | normal         | "コミュニケーションアプリ"  |
+| Heading 2 (JP) | Noto Sans JP       | 60px | 700    | 76.2px (x1.27)   | normal         | "LINEのサービス一覧"        |
+| Body           | SFPro/Noto Sans JP | 20px | 400    | normal           | normal         | 本文（非常に大きい）        |
 
 ### 3.5 行間・字間
 
@@ -80,6 +81,7 @@ font-family: SFPro, Arial, "Noto Sans JP", "Noto Sans KR", sans-serif;
 - **見出しの字間**: normal
 
 **ガイドライン**:
+
 - body font-size が 20px と大きいため、line-height: normal でも一定の可読性を確保
 - 見出しは 60-70px と非常に大きく、インパクト重視のデザイン
 - letter-spacing は全体的に normal で統一
@@ -94,6 +96,7 @@ line-break: strict;
 ```
 
 **禁則対象**:
+
 - 行頭禁止: `）」』】〕〉》」】、。，．・：；？！`
 - 行末禁止: `（「『【〔〈《「【`
 
@@ -117,6 +120,7 @@ font-feature-settings: "palt" 0; /* palt は通常適用なし */
 ### Buttons
 
 **Primary（LINE Green CTA）**
+
 - Background: `#06c755`
 - Text: `#ffffff`
 - Padding: 12px 32px
@@ -125,6 +129,7 @@ font-feature-settings: "palt" 0; /* palt は通常適用なし */
 - Font Weight: 700
 
 **Secondary**
+
 - Background: `transparent`
 - Text: `#000000`
 - Border: 1px solid `#e5e5e5`
@@ -156,13 +161,13 @@ font-feature-settings: "palt" 0; /* palt は通常適用なし */
 ### Spacing Scale
 
 | Token | Value |
-|-------|-------|
-| XS | 4px |
-| S | 8px |
-| M | 16px |
-| L | 24px |
-| XL | 40px |
-| XXL | 64px |
+| ----- | ----- |
+| XS    | 4px   |
+| S     | 8px   |
+| M     | 16px  |
+| L     | 24px  |
+| XL    | 40px  |
+| XXL   | 64px  |
 
 ### Container
 
@@ -178,12 +183,12 @@ font-feature-settings: "palt" 0; /* palt は通常適用なし */
 
 ## 6. Depth & Elevation
 
-| Level | Shadow | 用途 |
-|-------|--------|------|
-| 0 | none | フラットな要素 |
-| 1 | `0 2px 8px rgba(0,0,0,0.08)` | カード、ドロップダウン |
-| 2 | `0 4px 16px rgba(0,0,0,0.12)` | モーダル、ポップオーバー |
-| 3 | `0 8px 24px rgba(0,0,0,0.16)` | ダイアログ、フローティング要素 |
+| Level | Shadow                        | 用途                           |
+| ----- | ----------------------------- | ------------------------------ |
+| 0     | none                          | フラットな要素                 |
+| 1     | `0 2px 8px rgba(0,0,0,0.08)`  | カード、ドロップダウン         |
+| 2     | `0 4px 16px rgba(0,0,0,0.12)` | モーダル、ポップオーバー       |
+| 3     | `0 8px 24px rgba(0,0,0,0.16)` | ダイアログ、フローティング要素 |
 
 ---
 
@@ -210,10 +215,10 @@ font-feature-settings: "palt" 0; /* palt は通常適用なし */
 
 ### Breakpoints
 
-| Name | Width | 説明 |
-|------|-------|------|
-| Mobile | ≤ 767px | モバイルレイアウト |
-| Tablet | ≤ 1024px | タブレットレイアウト |
+| Name    | Width    | 説明                   |
+| ------- | -------- | ---------------------- |
+| Mobile  | ≤ 767px  | モバイルレイアウト     |
+| Tablet  | ≤ 1024px | タブレットレイアウト   |
 | Desktop | > 1024px | デスクトップレイアウト |
 
 ### タッチターゲット

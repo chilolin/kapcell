@@ -1,25 +1,13 @@
-import {
-  Avatar,
-  Box,
-  Button,
-  Flex,
-  Heading,
-  HStack,
-  Stack,
-  Text,
-} from "@chakra-ui/react";
+import { Avatar, Box, Button, Flex, Heading, HStack, Stack, Text } from "@chakra-ui/react";
 import { LuSparkles } from "react-icons/lu";
-import type { SuggestedUser, TrendingTopic } from "../types";
+import { fetchSuggestedUsers, fetchTrendingTopics } from "../fetchers";
 
-type PostFeedAsideProps = {
-  suggestedUsers: SuggestedUser[];
-  trendingTopics: TrendingTopic[];
-};
+export async function PostFeedAside() {
+  const [suggestedUsers, trendingTopics] = await Promise.all([
+    fetchSuggestedUsers(),
+    fetchTrendingTopics(),
+  ]);
 
-export function PostFeedAside({
-  suggestedUsers,
-  trendingTopics,
-}: PostFeedAsideProps) {
   return (
     <Stack
       display={{ base: "none", xl: "flex" }}

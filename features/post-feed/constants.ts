@@ -1,17 +1,5 @@
-import {
-  LuBell,
-  LuBookmark,
-  LuHouse,
-  LuMail,
-  LuTrendingUp,
-  LuUserRound,
-} from "react-icons/lu";
-import type {
-  NavigationItem,
-  SuggestedUser,
-  TimelinePost,
-  TrendingTopic,
-} from "./types";
+import { LuBell, LuBookmark, LuHouse, LuMail, LuTrendingUp, LuUserRound } from "react-icons/lu";
+import type { NavigationItem, SuggestedUser, TimelinePost, TrendingTopic } from "./types";
 
 export const navigationItems: NavigationItem[] = [
   { label: "ホーム", icon: LuHouse, active: true },
@@ -44,8 +32,7 @@ export const timeline: TimelinePost[] = [
     author: "Haru Watanabe",
     handle: "@haru_dev",
     time: "2時間",
-    body:
-      "App Router で画面を作るなら、まず情報密度のバランスを決めてからコンポーネントに落とすのが早い。今日は SNS 画面の再設計を進めています。",
+    body: "App Router で画面を作るなら、まず情報密度のバランスを決めてからコンポーネントに落とすのが早い。今日は SNS 画面の再設計を進めています。",
     tags: ["#Nextjs", "#ChakraUI"],
     replies: [
       {
@@ -53,8 +40,7 @@ export const timeline: TimelinePost[] = [
         author: "Mika Sato",
         handle: "@mika_ui",
         time: "35分",
-        body:
-          "情報設計から入るのはかなり共感です。先に優先順位を決めると UI の迷いが減りますね。",
+        body: "情報設計から入るのはかなり共感です。先に優先順位を決めると UI の迷いが減りますね。",
       },
     ],
     stats: { replies: 24, likes: 182, impressions: "12.8K" },
@@ -64,8 +50,7 @@ export const timeline: TimelinePost[] = [
     author: "Yuna Park",
     handle: "@yuna_product",
     time: "4時間",
-    body:
-      "良いフィード画面は、投稿本文よりも前に '誰の発信か' と 'いま何が起きているか' が伝わる。右カラムの文脈設計が重要。",
+    body: "良いフィード画面は、投稿本文よりも前に '誰の発信か' と 'いま何が起きているか' が伝わる。右カラムの文脈設計が重要。",
     tags: ["#ProductDesign", "#FeedUX"],
     replies: [
       {
@@ -73,8 +58,7 @@ export const timeline: TimelinePost[] = [
         author: "Kenji Ito",
         handle: "@kenji_builds",
         time: "1時間",
-        body:
-          "右カラムの役割を決めておくと、本文の見せ方も自然に整理されますね。",
+        body: "右カラムの役割を決めておくと、本文の見せ方も自然に整理されますね。",
       },
       {
         id: "reply-yuna-2",
@@ -91,8 +75,7 @@ export const timeline: TimelinePost[] = [
     author: "Sho Tanaka",
     handle: "@sho_notes",
     time: "昨日",
-    body:
-      "X のような UI でも、そのまま模倣するより自社ブランドに寄せた方が長く使える。今回はグリーンを軸に、親しみやすさを残した構成にしてみた。",
+    body: "X のような UI でも、そのまま模倣するより自社ブランドに寄せた方が長く使える。今回はグリーンを軸に、親しみやすさを残した構成にしてみた。",
     tags: ["#Brand", "#UI"],
     replies: [],
     stats: { replies: 31, likes: 244, impressions: "16.4K" },

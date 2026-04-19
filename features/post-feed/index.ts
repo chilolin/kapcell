@@ -1,9 +1,9 @@
 export {
-  navigationItems,
-  suggestedUsers,
-  timeline,
-  trendingTopics,
-} from "./constants";
+  fetchNavigationItems,
+  fetchSuggestedUsers,
+  fetchTimeline,
+  fetchTrendingTopics,
+} from "./fetchers";
 export type {
   NavigationItem,
   PostReply,

@@ -1,13 +1,9 @@
 import { Avatar, Button, Flex, Heading, Stack, Text } from "@chakra-ui/react";
-import type { NavigationItem } from "../types";
+import { fetchNavigationItems } from "../fetchers";
 
-type PostFeedSidebarProps = {
-  navigationItems: NavigationItem[];
-};
+export async function PostFeedSidebar() {
+  const navigationItems = await fetchNavigationItems();
 
-export function PostFeedSidebar({
-  navigationItems,
-}: PostFeedSidebarProps) {
   return (
     <Stack
       display={{ base: "none", lg: "flex" }}

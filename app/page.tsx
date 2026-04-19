@@ -1,15 +1,5 @@
 import { Box, Flex } from "@chakra-ui/react";
-import {
-  navigationItems,
-  suggestedUsers,
-  timeline,
-  trendingTopics,
-} from "@/features/post-feed";
-import {
-  PostFeedAside,
-  PostFeedMain,
-  PostFeedSidebar,
-} from "@/features/post-feed/components";
+import { PostFeedAside, PostFeedMain, PostFeedSidebar } from "@/features/post-feed/components";
 
 export default function Home() {
   return (
@@ -28,12 +18,9 @@ export default function Home() {
         gap={{ base: "16px", lg: "24px" }}
         align="flex-start"
       >
-        <PostFeedSidebar navigationItems={navigationItems} />
-        <PostFeedMain timeline={timeline} />
-        <PostFeedAside
-          suggestedUsers={suggestedUsers}
-          trendingTopics={trendingTopics}
-        />
+        <PostFeedSidebar />
+        <PostFeedMain />
+        <PostFeedAside />
       </Flex>
     </Box>
   );

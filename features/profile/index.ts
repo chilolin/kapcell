@@ -1,12 +1,7 @@
 export {
-  profileActivities,
-  profileShowcase,
-  profileStats,
-  profileUser,
-} from "./constants";
-export type {
-  ProfileActivity,
-  ProfileShowcase,
-  ProfileStat,
-  UserProfile,
-} from "./types";
+  fetchProfileActivities,
+  fetchProfileShowcase,
+  fetchProfileStats,
+  fetchProfileUser,
+} from "./fetchers";
+export type { ProfileActivity, ProfileShowcase, ProfileStat, UserProfile } from "./types";
